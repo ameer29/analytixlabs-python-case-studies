@@ -1,6 +1,6 @@
 # Python for Data Analytics: AnalytixLabs case studies (2023)
 
-In January 2023 I left my operations role at ITILITE to retrain in data analytics full-time, starting from the basics. This repo holds the Python work from that year: eight notebooks, from Python fundamentals to an end-to-end e-commerce capstone, completed as part of the **AnalytixLabs Data Analytics** programme (certificate issued 2024).
+In January 2023 I left my operations role at ITILITE to study data analytics full-time, starting from the basics. This repo holds the Python work from that year: eight notebooks, from Python fundamentals to an end-to-end e-commerce capstone, completed as part of the **AnalytixLabs Data Analytics** programme (certificate issued 2024).
 
 The questions were set by the course; the code, analysis and charts are mine. I've kept the notebooks as I wrote them in 2023 (only local file paths and an embedded auto-profiling report were removed), and added a short **"What I'd fix now"** note for each one below. Reading your old work critically is part of learning.
 
