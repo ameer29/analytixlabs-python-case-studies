@@ -10,16 +10,18 @@ The questions were set by the course; the code, analysis and charts are mine. I'
 
 ## The notebooks
 
-| # | Notebook | Business question | Skills |
-|---|---|---|---|
-| 01 | [Python basics](notebooks/01_python_basics.ipynb) | 20+ exercises: operators, loops, type checks, user-defined functions | Core Python |
-| 02 | [Data manipulation & visualisation](notebooks/02_data_manipulation_and_visualisation.ipynb) | Guided drills on 10 datasets (Chipotle orders, cars, students, retail, wind, Apple stock…) | Import, clean, filter, group, merge, plot |
-| 03 | [Retail](notebooks/03_retail_case_study.ipynb) | Who buys what, where, and through which store channel? | Joins, summaries, frequency tables, age bands, date filters |
-| 04 | [Credit card](notebooks/04_credit_card_case_study.ipynb) | How much does a bank earn from customer spend vs repayment, and who spends the most? | Business-rule cleaning, age groups, 2.9% interest model, city/product/time charts |
-| 05 | [Insurance claims](notebooks/05_insurance_claims_case_study.ipynb) | Which claims look risky, and do claim amounts differ by gender, age or segment? | Data audit, fraud-alert flag, de-duplication, imputation, hypothesis tests |
-| 06 | [Sales visualisation](notebooks/06_sales_visualisation_case_study.ipynb) | How did 2016 sales compare with 2015 by region, tier, division and quarter? | Grouped bars, pies, `np.where` quarters |
-| 07 | [Hypothesis testing](notebooks/07_hypothesis_testing_case_study.ipynb) | Five business problems: loan interest rates, price quotes, a re-engineering programme, job prioritisation, customer satisfaction | t-tests, ANOVA, chi-square |
-| 08 | [E-commerce marketing capstone](notebooks/08_ecommerce_marketing_analytics_capstone.ipynb) | End-to-end: KPIs, customer acquisition and retention, seasonality, segmentation, payments, ratings, delivery | 8-table merge, cohort-style metrics, segmentation, 6 charts |
+| # | Notebook | Business question | Skills | Status |
+|---|---|---|---|---|
+| 01 | Python basics | 20+ exercises: operators, loops, type checks, user-defined functions | Core Python | ⏳ uploading |
+| 02 | Data manipulation & visualisation | Guided drills on 10 datasets (Chipotle orders, cars, students, retail, wind, Apple stock…) | Import, clean, filter, group, merge, plot | ⏳ uploading |
+| 03 | [Retail](notebooks/03_retail_case_study.ipynb) | Who buys what, where, and through which store channel? | Joins, summaries, frequency tables, age bands, date filters | ✅ online |
+| 04 | Credit card | How much does a bank earn from customer spend vs repayment, and who spends the most? | Business-rule cleaning, age groups, 2.9% interest model, city/product/time charts | ⏳ uploading |
+| 05 | Insurance claims | Which claims look risky, and do claim amounts differ by gender, age or segment? | Data audit, fraud-alert flag, de-duplication, imputation, hypothesis tests | ⏳ uploading |
+| 06 | [Sales visualisation](notebooks/06_sales_visualisation_case_study.ipynb) | How did 2016 sales compare with 2015 by region, tier, division and quarter? | Grouped bars, pies, `np.where` quarters | ✅ online |
+| 07 | Hypothesis testing | Five business problems: loan interest rates, price quotes, a re-engineering programme, job prioritisation, customer satisfaction | t-tests, ANOVA, chi-square | ⏳ uploading |
+| 08 | E-commerce marketing capstone | End-to-end: KPIs, customer acquisition and retention, seasonality, segmentation, payments, ratings, delivery | 8-table merge, cohort-style metrics, segmentation, 6 charts | ⏳ uploading |
+
+*Notebooks are being added one by one. The ones marked ⏳ are written but not uploaded yet.*
 
 ---
 
@@ -47,6 +49,11 @@ The questions were set by the course; the code, analysis and charts are mine. I'
 - Petrol, camera and food are the top spend categories.
 - Both of these results still hold when I re-checked them in 2026 without the merge issue described below.
 
+**06 · Sales visualisation**
+- Sales grew in every region from 2015 to 2016; the East was the largest region at 12.7M in sales.
+- In the East, **New York was the only state that declined** (1.73M → 1.70M).
+- No High-tier division sold fewer units in 2016. Q3 was the strongest quarter in both years.
+
 **03 · Retail**
 - e-Shop is the biggest channel by both value and quantity: roughly double any other store type.
 - Male and female customers buy a very similar category mix, with Books the largest category for both (about 26% of transactions).
@@ -62,6 +69,7 @@ I learned the most in the months after writing these, so here's what I'd change 
 - **04 Credit card: the many-to-many merge.** I joined spend to repayments on customer only, which multiplied rows (1,500 became 37,284) and inflated the profit figure. The fix is to aggregate each table to customer × month first, then join. In my second version, the two limit rules wrote to a new column instead of the amounts, so the analysis table kept the original values. The final question (a user-defined top-10 function) is unfinished.
 - **05 Insurance: reading p-values.** In Q20 the p-value is 0.43, so the conclusion should be *no* relationship; I wrote the opposite. In Q18 I tested two yearly averages against $10,000, but n = 2 is far too small. The test should use the individual claims from the current year.
 - **08 Capstone: time and retention.** I grouped by calendar month across 2016–18, which mixes years. My "retention" was a month-over-month difference in customer counts, which is why it went above 100% and "new customers" went negative. A proper cohort table (first-purchase month × months since) is the right tool. The cross-selling question is still open.
+- **06 Sales visualisation: unfinished and mislabelled.** The last question (four quarter × tier pie charts) is unfinished, and several charts reuse the title "Sales by Region and Tier" when they show something else.
 - **General:** use relative paths, fewer `inplace=True` calls, one clear answer per question, and a short written insight after each chart.
 
 ---
