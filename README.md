@@ -69,7 +69,7 @@ I learned the most in the months after writing these, so here's what I'd change 
 ## Not included
 
 - **Datasets and question papers.** These belong to AnalytixLabs, so they aren't redistributed here. Notebooks read from a local `data/` folder.
-- **Excel, SQL and Power BI.** The course also covered these (consumer complaints and sports roster in Excel, retail and mobile-manufacturer case studies in SQL, sales dashboards in Power BI). I'll add them here once I recover my solution files.
+- **SQL, Excel and Power BI** are in their own repo: [Customer-Analysis](https://github.com/ameer29/Customer-Analysis), an end-to-end retail case (SQL Server → Excel pivots and Pareto → 3-page Power BI dashboard). The Python **supply-chain capstone** is in [Projects](https://github.com/ameer29/Projects).
 
 ---
 
